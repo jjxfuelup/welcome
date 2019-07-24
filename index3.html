@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#mycanvas{
+				margin-top: 20px;
+				margin-left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="mycanvas" width="150" height="150"></canvas>
+		<button onclick="reset()">重置</button>
+	<script type="text/javascript">
+		var c=document.getElementById("mycanvas");
+		var ctx=c.getContext("2d");
+		var player="O";
+		var size=50;
+		var boardstate=[];
+		var allstate=[];
+		var winstate=[[0,1,2],
+		              [3,4,5],
+		              [6,7,8],
+		              [0,3,6],
+		              [1,4,7],
+		              [2,5,8],
+		              [0,4,8],
+		              [2,4,6]
+		];
+		
+		
+		
+		drawboard();
+		mycanvas.onclick=function(e){
+			var x=Math.floor(e.offsetX/size);
+			var y=Math.floor(e.offsetY/size);
+			if(boardstate[x+3*y]!=null){ return ;}
+			drawChess(x,y,player);
+			testwin(x,y,player);
+			player=player=="O"?"X":"O";
+		}
+		
+		function reset(){
+			ctx.clearRect(0,0,150,150);
+			for(i=0;i<9;i++){
+					boardstate[i]=null;
+			}
+			drawboard();
+		}
+		function drawboard(){
+			for(var i=0;i<=3;i++){
+				ctx.beginPath();
+				ctx.moveTo(i*size,0);
+				ctx.lineTo(i*size,150);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(0,i*size);
+				ctx.lineTo(150,i*size);
+				ctx.stroke();
+			}
+		}
+		
+		function drawChess(x1,y1,player){
+			x=(x1+0.5)*size;
+			y=(y1+0.5)*size;
+			var temp1=0;
+			var temp2=0;
+	
+			if(player=="O"){
+				ctx.beginPath();
+				ctx.arc(x,y,15,0,2*Math.PI);
+				ctx.stroke();
+				
+				 	
+			}
+			else{
+				x2=x-12.5;y2=y-12.5;
+				x3=x+12.5;y3=y+12.5;
+			ctx.beginPath();
+				ctx.moveTo(x2,y2);
+				ctx.lineTo(x3,y3);
+				ctx.stroke();
+				
+			ctx.beginPath();
+				ctx.moveTo(x2,y3);
+				ctx.lineTo(x3,y2);
+				ctx.stroke();
+			
+			
+			}
+		}
+		
+		function testwin(x,y,player){
+			if(player=="O")
+				boardstate[x+3*y]=1;
+			else
+				boardstate[x+3*y]=-1;
+			allstate.push(boardstate);
+			for(i=0;i<8;i++){
+				if(boardstate[winstate[i][0]]!=null&&boardstate[winstate[i][1]]==boardstate[winstate[i][0]]&&boardstate[winstate[i][2]]==boardstate[winstate[i][1]])
+				return alert("winner is"+player);
+
+			}
+		}
+		function drawback(){
+			 
+		}
+	</script>
+	
+	</body>
+</html>
