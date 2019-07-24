@@ -6,25 +6,21 @@
 		
 		<style type="text/css">
 			#num1{ 
-				height: 100px;
-				background: #9193b9;
+				background: #baa;
 				margin: 0px;
 				padding: 0px;
-				
+				height: 50px;
 							
 				}
 				#num1 p{
 					font: 20px "微软雅黑";
-					padding-left: 40px;
-					padding-top: 40px;
+					padding-top: 12px;
 		
 					
 					}
-			#num1 p:hover{
-				color: red;
-			}
+			
 			#num2{
-				background: #b098b3 ;
+				background: #ccc;
 				margin: 0px;
 				padding: 0px;
 				height: 50px;
@@ -51,20 +47,19 @@
 				   margin-left: 0px;
 			   	   padding-left: 0px;
 				   width: 25%;
-				   	  
-				   	
-				  
 			    }
 			    span{
-			      font-weight: 800;
-		
+				
 			       margin: 0px;
 				   padding: 12px;
-				   padding-right: calc(100% - 85px);
-				   padding-left: 40px;
+				   padding-right: calc(100% - 40px);
+				   padding-left: 0px;
 
 			    }
-			   
+			    span:hover{
+			       color: red;	
+			    }
+			
 			    #num2_ul li a{
 			       margin: 0px;
 		           padding: 12px;
@@ -83,7 +78,7 @@
 				margin-left: 10px;
 				width: 25%;
 				height: 100%;
-				background: #b098b3;
+				background: #ffa;
 					position: absolute;
 				}
 				#num3_ul{
@@ -178,10 +173,10 @@
 			
 		<div id="num3">
 			<ul id="num3_ul">
-				<li><a href="#" onclick="tanchishe()">贪吃蛇</a></li>
+				<li><a href="#" onclick="tanchishe()">项目1</a></li>
 			
 				
-				<li><a href="#" onclick="wuziqi()">五子棋</a></li>
+				<li><a href="#" onclick="wuziqi()">项目2</a></li>
 				<li><a href="#">项目3</a></li>
 				<li><a href="#">项目4</a></li>
 				<li><a href="#">项目5</a></li>

@@ -12,8 +12,9 @@
 	</head>
 	
 	<body>
+		 <p id="tip">请黑方先走：</p>
 		<canvas id="mycanvas" width="150" height="150"></canvas>
-	
+	   
 	<script type="text/javascript">
 		var c=document.getElementById("mycanvas");
 		var ctx=c.getContext("2d");
@@ -71,6 +72,7 @@
 					ctx.stroke();
 					ctx.fillStyle="black";
 					ctx.fill();
+					document.getElementById("tip").innerHTML="轮到白方："
 				}
 				
 				else{   
@@ -78,7 +80,8 @@
 					ctx.arc(x,y,size/2-2,0,2*Math.PI)
 					ctx.stroke();
 					ctx.fillStyle="#ddd";
-					ctx.fill();		
+					ctx.fill();	
+					document.getElementById("tip").innerHTML="轮到黑方："
 			  }		  
 	   }
 		function winplayer(x,y,player){
