@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#mycanvas{
+				margin: 20px;
+				margin-left: 50px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<canvas id="mycanvas" width="150" height="150"></canvas>
+	
+	<script type="text/javascript">
+		var c=document.getElementById("mycanvas");
+		var ctx=c.getContext("2d");
+		var size=15;
+		var player="black";
+		
+		var boardstate= new Array();//定义二维数组
+		for(var i=0;i<size+8;i++){
+			boardstate[i]=new Array(i);
+		    for(var j=0;j<size+8;j++){
+			  boardstate[i][j]=-1;
+		    }
+		}
+		
+		
+		
+		draw();
+		mycanvas.onclick=function(event){
+		        var x=Math.floor(event.offsetX/size);
+				var y= Math.floor(event.offsetY/size);
+				if(boardstate[x+4][y+4]!=-1) return ;
+				drawChess(x,y,player);
+				if(player=="black"){
+					boardstate[x+4][y+4]=1;
+				}
+				else{
+					boardstate[x+4][y+4]=0;
+				}
+				winplayer(x,y,player);
+				player=player=="black"?"white":"black";
+				
+			}
+	
+		function draw(){
+			for(var i=0;i<=size;i++){
+				ctx.beginPath();
+				ctx.moveTo(i*size,0);
+				ctx.lineTo(i*size,150);
+				ctx.strokeStyle="#111"
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(0,i*size);
+				ctx.lineTo(150,i*size);
+				ctx.stroke();
+			}
+			
+		}
+			
+		function drawChess(x,y,player){
+			x=x*size;
+			y=y*size;
+				if(player=="black"){
+					ctx.beginPath();
+					ctx.arc(x,y,size/2-2,0,2*Math.PI)
+					ctx.stroke();
+					ctx.fillStyle="black";
+					ctx.fill();
+				}
+				
+				else{   
+					ctx.beginPath();
+					ctx.arc(x,y,size/2-2,0,2*Math.PI)
+					ctx.stroke();
+					ctx.fillStyle="#ddd";
+					ctx.fill();		
+			  }		  
+	   }
+		function winplayer(x,y,player){
+			x1=x+4;y1=y+4;
+			var temp1=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
+			var temp2=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
+			var temp3=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
+			var temp4=[-1,-1,-1,-1,-1,-1,-1,-1,-1];
+			
+			for(i=0;i<9;i++){
+				temp1[i]=boardstate[x1-4+i][y1];//获取横向信息
+				temp2[i]=boardstate[x1][y1-4+i];//获取纵向信息
+				temp3[i]=boardstate[x1-4+i][y1-4+i];//获取左斜向下信息
+				temp4[i]=boardstate[x1-4+i][y1+4-i];//获取右斜向下信息
+			}
+					
+			if(player=="white"){   //弹出白方获胜的信息
+				for(i=0;i<5;i++){
+					
+			       if(temp1[i]==0&&temp1[i+1]==0&&temp1[i+2]==0&&temp1[i+3]==0&&temp1[i+4]==0)
+				       return alert("white wins");
+				   if(temp2[i]==0&&temp2[i+1]==0&&temp2[i+2]==0&&temp2[i+3]==0&&temp2[i+4]==0)
+				       return alert("white wins");
+				   if(temp3[i]==0&&temp3[i+1]==0&&temp3[i+2]==0&&temp3[i+3]==0&&temp3[i+4]==0)
+				       return alert("white wins");
+				   if(temp4[i]==0&&temp4[i+1]==0&&temp4[i+2]==0&&temp4[i+3]==0&&temp4[i+4]==0)
+				       return alert("white wins");
+				}
+			}
+			else{  //弹出黑方获胜的信息
+					for(i=0;i<5;i++){
+					
+			       if(temp1[i]==1&&temp1[i+1]==1&&temp1[i+2]==1&&temp1[i+3]==1&&temp1[i+4]==1)
+				       return alert("black wins");
+				   if(temp2[i]==1&&temp2[i+1]==1&&temp2[i+2]==1&&temp2[i+3]==1&&temp2[i+4]==1)
+				       return alert("black wins");
+				   if(temp3[i]==1&&temp3[i+1]==1&&temp3[i+2]==1&&temp3[i+3]==1&&temp3[i+4]==1)
+				       return alert("black wins");
+				   if(temp4[i]==1&&temp4[i+1]==1&&temp4[i+2]==1&&temp4[i+3]==1&&temp4[i+4]==1)
+				       return alert("black wins");
+				}
+			}	
+		}
+		
+	</script>
+	
+	</body>
+</html>

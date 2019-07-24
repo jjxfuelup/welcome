@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<style type="text/css">
+			#num1{ 
+				background: #baa;
+				margin: 0px;
+				padding: 0px;
+				height: 50px;
+							
+				}
+				#num1 p{
+					font: 20px "微软雅黑";
+					padding-top: 12px;
+		
+					
+					}
+			
+			#num2{
+				background: #ccc;
+				margin: 0px;
+				padding: 0px;
+				height: 50px;
+				width: 100%;
+		       }
+				
+			    #num2_ul {
+				   height: 50px;
+				   width: 100%;
+                   list-style: none;
+				   margin: 0px;
+				   padding: 0px;
+				   font:20px verdana, arial, sans-serif; 
+	
+			     }
+			
+			    #num2_ul li{	
+				   margin-top: 12px;
+				   float:left;
+					
+			    }
+			    #li_sub{
+				   margin-top: 12px;
+				   margin-left: 0px;
+			   	   padding-left: 0px;
+				   width: 25%;
+			    }
+			    span{
+				
+			       margin: 0px;
+				   padding: 12px;
+				   padding-right: calc(100% - 40px);
+				   padding-left: 0px;
+
+			    }
+			    span:hover{
+			       color: red;	
+			    }
+			
+			    #num2_ul li a{
+			       margin: 0px;
+		           padding: 12px;
+				   text-decoration: none;
+				   color:#000 ;
+				}
+				#num2_ul li a.active{
+					color: yellow;
+				}
+			    #num2_ul li a:hover:not(.active){
+							color: yellow;
+			    }
+			#num3{
+				border-top: 1px solid black;
+				margin-top: 10px;
+				margin-left: 10px;
+				width: 25%;
+				height: 100%;
+				background: #ffa;
+					position: absolute;
+				}
+				#num3_ul{
+				
+					padding: 0px;
+					 margin: 0px;
+					 
+				
+				}
+				#num3_ul li{
+				
+					text-align: center;
+					list-style: none;
+					margin: 0px;
+					width: 100%;
+					
+				}
+				#num3_ul li a{
+					padding: 5px;
+					display: block;
+					text-decoration: none;
+					color: #000;
+				
+				}
+				#num3_ul li a:hover {
+				background: #ddd;
+				font-weight: 800;
+				
+				}
+
+			#num4{
+					margin-top: 10px;
+					background: #fff;
+					width: calc(75% - 10px);
+					height: 180px;
+					float: right;
+					border-top: 1px solid black;
+					
+					}
+				div.picture{
+					float: left;
+					margin: 25px;
+					
+				}
+			#num5{
+						border-top: 1px dashed black;
+						width: calc(75% - 10px);
+						height: 130px;
+						float: right;
+						
+					}
+					
+			#num6{
+				border-top: 1px dotted black;
+					width: 75%;
+					height: 130px;
+					float: right;
+					background: #fff;
+					padding-top: 20px;
+					}
+				#num6_1{
+						width:40%;
+						height: 100%;
+						float: left;
+						background: #fff;
+					}
+				form{
+						
+					}
+					
+		</style>
+		
+			    
+		
+	</head>
+	<body>
+		
+		<div id="num1">
+			<p>您好</p>
+		</div>
+		<div id="num2">
+			 	<ul id="num2_ul">
+			 	<li id="li_sub"><span>欢迎</span></li>
+				<li><a href="#" class="active">菜单1</a></li>
+				<li><a href="#">菜单2</a></li>
+				<li><a href="#">菜单3</a></li>
+				<li><a href="#">菜单4</a></li>
+			</ul>
+			
+			
+		</div>
+			
+		<div id="num3">
+			<ul id="num3_ul">
+				<li><a href="#" onclick="tanchishe()">项目1</a></li>
+			
+				
+				<li><a href="#" onclick="wuziqi()">项目2</a></li>
+				<li><a href="#">项目3</a></li>
+				<li><a href="#">项目4</a></li>
+				<li><a href="#">项目5</a></li>
+				<li><a href="#">项目6</a></li>
+				<li><a href="#">项目7</a></li>
+				<li><a href="#">项目8</a></li>
+				<li><a href="#">项目9</a></li>
+				<li><a href="#">项目10</a></li>
+				<li><a href="#">项目11</a></li>
+				<li><a href="#">项目12</a></li>
+			</ul>
+		</div>
+		<div id="num4">
+			<div id="num4_1">
+				<div id="" class="picture">
+					<a href="#button1"><img src="img/demo1.jpg" width="40px" height="40px"/></a>
+					<div>文字1</div>
+				</div>
+			</div>
+			
+			<div id="num4_2">
+				<div id="" class="picture">
+				    <a href="#button1"><img src="img/demo2.jpg" width="40px" height="40px"/></a>
+					<div>文字2</div>
+			    </div>
+			</div>
+			
+			<div id="num4_3">
+				<div id="" class="picture">
+					<a href="#button1"><img src="img/demo3.jpg" width="40px" height="40px"/></a>
+					<div>文字3</div>
+				</div>
+		   </div>
+		   
+		</div>
+
+		<div id="num5">
+		    <p> &nbsp;这是文字描述</p>
+		    
+		</div>
+		
+		<div id="num6">
+			<div id="num6_1">
+				
+			</div>
+			<div id="num6_2">
+				
+				<form action="#">
+				   帐号：<input type="text" name="account" id="" value=""  size="16"/><br />
+				   密码：<input type="password" name="password" size="16"/>
+			       <input type="submit" name="submit"  value="提交"  />
+                  <input type="reset" name="reset" value="重置" "/>		         
+				</form>
+			</div>
+			
+		</div>
+		
+	</body>
+	<script src="js/jquery-3.3.1.js">	</script>
+	<script type="text/javascript">
+		function tanchishe(){
+			
+			document.getElementById("num4").innerHTML="";
+			$("#num4").load("index1.html");
+		}
+		function wuziqi(){
+					document.getElementById("num4").innerHTML="";
+			$("#num4").load("index2.html");
+		}
+	</script>
+		
+</html>
