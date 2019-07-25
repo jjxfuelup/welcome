@@ -69,7 +69,10 @@
 					ctx.arc(x,y,size/2-2,0,2*Math.PI);
 					ctx.strokeStyle="#ccc";
 					ctx.stroke();
-					ctx.fillStyle="black";
+					var grd=ctx.createRadialGradient(x,y,size/2-2,x,y,1);
+					grd.addColorStop(0,"#000");
+					grd.addColorStop(1,"#ccc");
+					ctx.fillStyle=grd;
 					ctx.fill();
 					document.getElementById("tip").innerHTML="轮到白方："
 				}
@@ -79,7 +82,10 @@
 					ctx.arc(x,y,size/2-2,0,2*Math.PI);
 					ctx.strokeStyle="#ccc";
 					ctx.stroke();
-					ctx.fillStyle="#ddd";
+					var grd=ctx.createRadialGradient(x,y,size/2-2,x,y,1);
+					grd.addColorStop(0,"#ccc");
+					grd.addColorStop(1,"#fff");
+					ctx.fillStyle=grd;
 					ctx.fill();	
 					document.getElementById("tip").innerHTML="轮到黑方："
 			  }		  
