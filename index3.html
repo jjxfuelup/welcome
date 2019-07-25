@@ -47,6 +47,7 @@
 			for(i=0;i<9;i++){
 					boardstate[i]=null;
 			}
+			player="O";
 			drawboard();
 		}
 		function drawboard(){
@@ -100,7 +101,8 @@
 			allstate.push(boardstate);
 			for(i=0;i<8;i++){
 				if(boardstate[winstate[i][0]]!=null&&boardstate[winstate[i][1]]==boardstate[winstate[i][0]]&&boardstate[winstate[i][2]]==boardstate[winstate[i][1]])
-				return alert("winner is"+player);
+				
+				return alert("winner is "+player);
 
 			}
 		}

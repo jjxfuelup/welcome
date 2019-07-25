@@ -25,6 +25,7 @@
 		var player="black";
 		
 		var boardstate= new Array();//定义二维数组
+		
 		for(var i=0;i<size+8;i++){
 			boardstate[i]=new Array(i);
 		    for(var j=0;j<size+8;j++){
@@ -71,7 +72,8 @@
 			y=y*size;
 				if(player=="black"){
 					ctx.beginPath();
-					ctx.arc(x,y,size/2-2,0,2*Math.PI)
+					ctx.arc(x,y,size/2-2,0,2*Math.PI);
+					ctx.strokeStyle="#ccc";
 					ctx.stroke();
 					ctx.fillStyle="black";
 					ctx.fill();
@@ -80,7 +82,8 @@
 				
 				else{   
 					ctx.beginPath();
-					ctx.arc(x,y,size/2-2,0,2*Math.PI)
+					ctx.arc(x,y,size/2-2,0,2*Math.PI);
+					ctx.strokeStyle="#ccc";
 					ctx.stroke();
 					ctx.fillStyle="#ddd";
 					ctx.fill();	
@@ -104,31 +107,110 @@
 			if(player=="white"){   //弹出白方获胜的信息
 				for(i=0;i<5;i++){
 					
-			       if(temp1[i]==0&&temp1[i+1]==0&&temp1[i+2]==0&&temp1[i+3]==0&&temp1[i+4]==0)
-				       return alert("white wins");
-				   if(temp2[i]==0&&temp2[i+1]==0&&temp2[i+2]==0&&temp2[i+3]==0&&temp2[i+4]==0)
-				       return alert("white wins");
-				   if(temp3[i]==0&&temp3[i+1]==0&&temp3[i+2]==0&&temp3[i+3]==0&&temp3[i+4]==0)
-				       return alert("white wins");
-				   if(temp4[i]==0&&temp4[i+1]==0&&temp4[i+2]==0&&temp4[i+3]==0&&temp4[i+4]==0)
-				       return alert("white wins");
-				}
+			       if(temp1[i]==0&&temp1[i+1]==0&&temp1[i+2]==0&&temp1[i+3]==0&&temp1[i+4]==0){
+			       	 for(j=0;j<5;j++){
+			       	 x=x1-8+j;
+			       	 y=y1-4; 
+			        drawborder(x,y); 
+			       	 }
+			       	setboardstate();
+			       	 return alert("white wins"); 
+			       }
+				   if(temp2[i]==0&&temp2[i+1]==0&&temp2[i+2]==0&&temp2[i+3]==0&&temp2[i+4]==0){
+				   	  for(j=0;j<5;j++){
+				   	  x=x1-4;
+				   	  y=y1-8+j;
+                      drawborder(x,y);
+                    }
+				   	  setboardstate();
+			       	 return alert("white wins"); 
+				   }
+				   
+				       
+				   if(temp3[i]==0&&temp3[i+1]==0&&temp3[i+2]==0&&temp3[i+3]==0&&temp3[i+4]==0){
+				   	 for(j=0;j<5;j++){
+				   	    x=x1-8+j;
+				   	    y=y1-8+j;
+				   	    drawborder(x,y);
+                     } 
+                     setboardstate();
+			       	 return alert("white wins"); 
+				   }
+				       
+				   if(temp4[i]==0&&temp4[i+1]==0&&temp4[i+2]==0&&temp4[i+3]==0&&temp4[i+4]==0){
+				   	
+				   	for(j=0;j<5;j++){
+				   	x=x1-4+j;
+				   	y=y1-4-j;
+				   	drawborder(x,y);		       	 
+				    }
+				   	setboardstate();
+				     return alert("white wins");
+				   }
+			   }
 			}
 			else{  //弹出黑方获胜的信息
 					for(i=0;i<5;i++){
 					
-			       if(temp1[i]==1&&temp1[i+1]==1&&temp1[i+2]==1&&temp1[i+3]==1&&temp1[i+4]==1)
+			       if(temp1[i]==1&&temp1[i+1]==1&&temp1[i+2]==1&&temp1[i+3]==1&&temp1[i+4]==1){
+			        for(j=0;j<5;j++){
+			       	 x=x1-8+j;
+			       	 y=y1-4; 
+			        drawborder(x,y);
+			       	 }
+			        setboardstate();
+				      return alert("black wins");
+			       }
+			
+				   if(temp2[i]==1&&temp2[i+1]==1&&temp2[i+2]==1&&temp2[i+3]==1&&temp2[i+4]==1){
+				   		    for(j=0;j<5;j++){
+				   	  x=x1-4;
+				   	  y=y1-8+j;
+				   	  setboardstate();
+                      drawborder(x,y);
+                    }
 				       return alert("black wins");
-				   if(temp2[i]==1&&temp2[i+1]==1&&temp2[i+2]==1&&temp2[i+3]==1&&temp2[i+4]==1)
+				   }
+				      
+				   if(temp3[i]==1&&temp3[i+1]==1&&temp3[i+2]==1&&temp3[i+3]==1&&temp3[i+4]==1){
+				   	for(j=0;j<5;j++){
+				   	    x=x1-8+j;
+				   	    y=y1-8+j;
+				   	    drawborder(x,y);
+                     } 
+                     setboardstate();
 				       return alert("black wins");
-				   if(temp3[i]==1&&temp3[i+1]==1&&temp3[i+2]==1&&temp3[i+3]==1&&temp3[i+4]==1)
+				   }
+				       
+				   if(temp4[i]==1&&temp4[i+1]==1&&temp4[i+2]==1&&temp4[i+3]==1&&temp4[i+4]==1){
+				    	
+				   	for(j=0;j<5;j++){
+				   	x=x1-4+j;
+				   	y=y1-4-j;
+				   	drawborder(x,y);		       	 
+				    }
+				   	setboardstate();
 				       return alert("black wins");
-				   if(temp4[i]==1&&temp4[i+1]==1&&temp4[i+2]==1&&temp4[i+3]==1&&temp4[i+4]==1)
-				       return alert("black wins");
-				}
-			}	
+				    }
+			     }	
+		     }
 		}
-		
+		function drawborder(x,y){
+			   
+			       	ctx.beginPath();
+					ctx.arc(x*size,y*size,size/2-1,0,2*Math.PI);
+					ctx.strokeStyle="red";
+					ctx.stroke();
+			       	       	
+		}
+		function setboardstate(){
+			for( i=0;i<size+8;i++){
+			  boardstate[i]=new Array(i);
+		       for( j=0;j<size+8;j++){
+			    boardstate[i][j]=1;
+		       }
+		   }
+		}
 	</script>
 	
 	</body>
