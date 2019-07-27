@@ -5,13 +5,20 @@
 		<title></title>
 		
 		<style type="text/css">
+			#daohang{
+				margin: 0px;
+		
+				background: #fff;
+				height: 336px;
+			}
 			#num1{ 
 				height: 100px;
-				background: #9193b9;
+				width: 100%;
+				background: #fc0;
 				margin: 0px;
-				padding: 0px;
-				
-							
+				padding: 0px;	
+			
+								
 				}
 				#num1 p{
 					font: 20px "微软雅黑";
@@ -24,11 +31,13 @@
 				color: red;
 			}
 			#num2{
-				background: #b098b3 ;
+				background: #fb0 ;
 				margin: 0px;
 				padding: 0px;
 				height: 50px;
 				width: 100%;
+	
+				
 		       }
 				
 			    #num2_ul {
@@ -83,7 +92,7 @@
 				margin-left: 10px;
 				width: 25%;
 				height: 100%;
-				background: #b098b3;
+				background: #f4f4f4;
 					position: absolute;
 				}
 				#num3_ul{
@@ -160,7 +169,8 @@
 		
 	</head>
 	<body>
-		
+	
+		<div id="daohang"></div>
 		<div id="num1">
 			<p>您好</p>
 		</div>
@@ -240,8 +250,12 @@
 		</div>
 		
 	</body>
-	<script src="js/jquery-3.3.1.js">	</script>
+		<script src="js/jquery-3.3.1.js">	</script>
 	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#daohang").load("test1.html");	
+	});
+		
 		function tanchishe(){
 			
 			document.getElementById("num4").innerHTML="";

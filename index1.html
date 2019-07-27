@@ -13,7 +13,7 @@
 	
 	<body>
 		<div id="canvas1">
-			<canvas id="mycanvas" width="100" height="100"></canvas>
+			<canvas id="mycanvas" width="150" height="150"></canvas>
 		
 		
 		<button onclick="zanting()" value="暂停">暂停</button>
@@ -22,7 +22,7 @@
 		<script>
 			var c=document.getElementById("mycanvas");
 			var ctx=c.getContext("2d");
-			var size=10;
+			var size=15;
 			var food=[4,4];
 			var snake=[[0,0],[1,0],[2,0]];
 			var to="0";
@@ -50,15 +50,15 @@
 		}
 		
 		function draw(){
-			ctx.clearRect(0,0,100,100);
+			ctx.clearRect(0,0,150,150);
 			for(var i=0;i<=size;i++){
 				ctx.beginPath();
 				ctx.moveTo(i*size,0);
-				ctx.lineTo(i*size,100);
+				ctx.lineTo(i*size,150);
 				ctx.stroke();
 					ctx.beginPath();
 				ctx.moveTo(0,i*size);
-				ctx.lineTo(100,i*size);
+				ctx.lineTo(150,i*size);
 				ctx.stroke();
 			}
 			for(i=0;i<snake.length;i++){

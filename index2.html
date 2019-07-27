@@ -69,9 +69,9 @@
 					ctx.arc(x,y,size/2-2,0,2*Math.PI);
 					ctx.strokeStyle="#ccc";
 					ctx.stroke();
-					var grd=ctx.createRadialGradient(x,y,size/2-2,x,y,1);
+					var grd=ctx.createRadialGradient(x,y,size/2-2,x,y,2);
 					grd.addColorStop(0,"#000");
-					grd.addColorStop(1,"#ccc");
+					grd.addColorStop(1,"#aaa");
 					ctx.fillStyle=grd;
 					ctx.fill();
 					document.getElementById("tip").innerHTML="轮到白方："
@@ -82,8 +82,8 @@
 					ctx.arc(x,y,size/2-2,0,2*Math.PI);
 					ctx.strokeStyle="#ccc";
 					ctx.stroke();
-					var grd=ctx.createRadialGradient(x,y,size/2-2,x,y,1);
-					grd.addColorStop(0,"#ccc");
+					var grd=ctx.createRadialGradient(x,y,size/2-2,x,y,2);
+					grd.addColorStop(0,"#777");
 					grd.addColorStop(1,"#fff");
 					ctx.fillStyle=grd;
 					ctx.fill();	
