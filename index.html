@@ -243,7 +243,7 @@
 				   帐号：<input type="text" name="account" id="" value=""  size="16"/><br />
 				   密码：<input type="password" name="password" size="16"/>
 			       <input type="submit" name="submit"  value="提交"  />
-                  <input type="reset" name="reset" value="重置" "/>		         
+                  <input type="reset" name="reset" value="重置" />		         
 				</form>
 			</div>
 			
@@ -254,19 +254,28 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#daohang").load("test1.html");	
+			
 	});
 		
 		function tanchishe(){
-			
-			document.getElementById("num4").innerHTML="";
 			$("#num4").load("index1.html");
+			$("#num3").find("li").click(function(){
+	if(interval!=undefined){ 
+		clearInterval(interval);
+	clearInterval(timer); 
+			
+	}
+	
+	
+			});
+	 
 		}
 		function wuziqi(){
-					document.getElementById("num4").innerHTML="";
+		
 			$("#num4").load("index2.html");
 		}
-		function jinziqi(){
-					document.getElementById("num4").innerHTML="";
+		function jinziqi(){ 
+					
 			$("#num4").load("index3.html");
 		}
 	</script>
