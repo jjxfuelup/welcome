@@ -10,7 +10,7 @@
 		
 				background: #fff;
 				height: 336px;
-			}
+			} 
 			#num1{ 
 				height: 100px;
 				width: 100%;
@@ -207,29 +207,29 @@
 		<div id="num4">
 			<div id="num4_1">
 				<div id="" class="picture">
-					<a href="#button1"><img src="img/demo1.jpg" width="40px" height="40px"/></a>
-					<div>文字1</div>
+					<a href="#button1"><img src="img/demo1.jpg" width="100px" height="100px"/></a>
+					<div>图片1</div>
 				</div>
 			</div>
 			
 			<div id="num4_2">
 				<div id="" class="picture">
-				    <a href="#button1"><img src="img/demo2.jpg" width="40px" height="40px"/></a>
-					<div>文字2</div>
+				    <a href="#button1"><img src="img/demo2.jpg" width="100px" height="100px"/></a>
+					<div>图片2</div>
 			    </div>
 			</div>
 			
 			<div id="num4_3">
 				<div id="" class="picture">
-					<a href="#button1"><img src="img/demo3.jpg" width="40px" height="40px"/></a>
-					<div>文字3</div>
+					<a href="#button1"><img src="img/demo3.jpg" width="100px" height="100px"/></a>
+					<div>图片3</div>
 				</div>
 		   </div>
 		   
 		</div>
 
 		<div id="num5">
-		    <p> &nbsp;这是文字描述</p>
+		    <p> &nbsp;项目介绍：左边项目是使用HTML5做的小游戏</p>
 		    
 		</div>
 		
@@ -239,18 +239,38 @@
 			</div>
 			<div id="num6_2">
 				
-				<form action="#">
-				   帐号：<input type="text" name="account" id="" value=""  size="16"/><br />
-				   密码：<input type="password" name="password" size="16"/>
-			       <input type="submit" name="submit"  value="提交"  />
+				<form action="#" id="zhuce">
+				   姓名：<input type="text" name="account" id="account" value=""  size="16"/><br />
+				   年龄：<input type="text" name="password" id="age" size="16"/>
+			       <input type="submit" name="submit"  value="提交" id="submit" />
                   <input type="reset" name="reset" value="重置" />		         
 				</form>
 			</div>
+			<script src="js/jquery-3.3.1.js">	</script>
 			
-		</div>
+			<script type="text/javascript">
+             var user = function(data) { 
+             	var i=0;
+             	$("#account").focus(function(){
+             			$(this).attr("value",data[i].name);  
+             				$("#age").attr("value",data[i].age); 
+             			
+             	});
+          $("#submit").click(function(){
+          	i=i+1;  
+             $("#account").attr("value",data[i].name);  
+             	$("#age").attr("value",data[i].age); 
+             	if(i==data.length)
+             	i=0; 
+             	
+          });
+     }; 
+ </script>
+ <script type="text/javascript" src="https://jjxfuelup.github.io/hello-world/user.js"></script>
+		</div>  
 		
 	</body>
-		<script src="js/jquery-3.3.1.js">	</script>
+		
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#daohang").load("test1.html");	
@@ -260,11 +280,12 @@
 		function tanchishe(){
 			$("#num4").load("index1.html");
 			$("#num3").find("li").click(function(){
-	if(interval!=undefined){ 
-		clearInterval(interval);
-	clearInterval(timer); 
-			
-	}
+	         if(interval!=undefined){ 
+	         	 
+		       clearInterval(interval);
+		         clearInterval(timer); 
+	        
+             }
 	
 	
 			});
