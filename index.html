@@ -242,33 +242,37 @@
 				<form action="#" id="zhuce">
 				   姓名：<input type="text" name="account" id="account" value=""  size="16"/><br />
 				   年龄：<input type="text" name="password" id="age" size="16"/>
-			       <input type="submit" name="submit"  value="提交" id="submit" />
-                  <input type="reset" name="reset" value="重置" />		         
+			       <input type="button" name="submit"  value="显示" id="submit" />
+                  <input type="reset" name="reset" value="添加" id="add"/>		         
 				</form>
 			</div>
 			<script src="js/jquery-3.3.1.js">	</script>
-			
 			<script type="text/javascript">
-             var user = function(data) { 
-             	var i=0;
-             	$("#account").focus(function(){
-             			$(this).attr("value",data[i].name);  
-             				$("#age").attr("value",data[i].age); 
-             			
-             	});
-          $("#submit").click(function(){
-          	i=i+1;  
-             $("#account").attr("value",data[i].name);  
-             	$("#age").attr("value",data[i].age); 
-             	if(i==data.length)
-             	i=0; 
+	
+			 var count=0;
+             var user = function(data) {
              	
-          });
-     }; 
+             	$("#account").focus(function(){
+             			$(this).attr("value",data[count].name);  
+             			$("#age").attr("value",data[count].age); 
+             			
+             	}); 
+             	$("#submit").click(function(){
+             		count=count+1;
+             		$("#account").attr("value",data[count].name);  
+             		$("#age").attr("value",data[count].age); 
+             		if(count==data.length-1)
+             		count=-1; 
+             	}); 
+              
+   
+              }; 
+	
+				
  </script>
- <script type="text/javascript" src="https://jjxfuelup.github.io/hello-world/user.js"></script>
+ <script type="text/javascript" src="https://jjxfuelup.github.io/hello-world/user.js"> </script>
 		</div>  
-		
+		 
 	</body>
 		
 	<script type="text/javascript">
@@ -279,17 +283,12 @@
 		
 		function tanchishe(){
 			$("#num4").load("index1.html");
-			$("#num3").find("li").click(function(){
-	         if(interval!=undefined){ 
-	         	 
-		       clearInterval(interval);
-		         clearInterval(timer); 
-	        
-             }
-	
-	
-			});
-	 
+			   $("#num3").find("li").click(function(){
+	              if(interval!=undefined){ 
+		           clearInterval(interval);
+		           clearInterval(timer); 	        
+                  }
+			   });
 		}
 		function wuziqi(){
 		
