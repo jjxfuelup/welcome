@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+	
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title></title>
 		
 		<style type="text/css">
@@ -122,11 +124,16 @@
 				font-weight: 800;
 				
 				}
+				#num45{
+					width: calc(75% - 10px);
+                    margin-top: 10px;
+					float: right; 
+				}
 
 			#num4{
-					margin-top: 10px;
+				    width: 100%;
+					
 					background: #fff;
-					width: calc(75% - 10px);
 					height: 210px;
 					float: right;
 					border-top: 1px solid black;
@@ -139,7 +146,7 @@
 				}
 			#num5{
 						border-top: 1px dashed black;
-						width: calc(75% - 10px);
+						width: 100%;
 						height: 130px;
 						float: right;
 						
@@ -169,7 +176,7 @@
 		
 	</head>
 	<body>
-	
+	<script src="js/jquery-3.3.1.js">	</script>
 		<div id="daohang"></div>
 		<div id="num1">
 			<p>您好</p>
@@ -178,7 +185,7 @@
 			 	<ul id="num2_ul">
 			 	<li id="li_sub"><span>欢迎</span></li>
 				<li><a href="#" class="active">菜单1</a></li>
-				<li><a href="#">菜单2</a></li>
+				<li><a href="#" >菜单2</a></li>
 				<li><a href="#">菜单3</a></li>
 				<li><a href="#">菜单4</a></li>
 			</ul>
@@ -204,6 +211,7 @@
 				<li><a href="#">项目12</a></li>
 			</ul>
 		</div>
+	<div id="num45">
 		<div id="num4">
 			<div id="num4_1">
 				<div id="" class="picture">
@@ -232,7 +240,9 @@
 		    <p> &nbsp;项目介绍：左边项目是使用HTML5做的小游戏</p>
 		    
 		</div>
-		
+
+	</div>	
+				
 		<div id="num6">
 			<div id="num6_1">
 				
@@ -246,7 +256,7 @@
                   <input type="reset" name="reset" value="添加" id="add"/>		         
 				</form>
 			</div>
-			<script src="js/jquery-3.3.1.js">	</script>
+			
 			<script type="text/javascript">
 	
 			 var count=0;
@@ -272,7 +282,7 @@
  </script>
  <script type="text/javascript" src="https://jjxfuelup.github.io/hello-world/user.js"> </script>
 		</div>  
-		 
+		
 	</body>
 		
 	<script type="text/javascript">
@@ -280,6 +290,7 @@
 			$("#daohang").load("test1.html");	
 			
 	});
+		
 		
 		function tanchishe(){
 			$("#num4").load("index1.html");
@@ -297,7 +308,11 @@
 		function jinziqi(){ 
 					
 			$("#num4").load("index3.html");
+			
 		}
+//		function calendar(){
+//			$("#num45").empty().load("calendar.html");
+//		}
 	</script>
 		
 </html>
